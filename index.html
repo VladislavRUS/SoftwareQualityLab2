@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Software quality lab 2</title>
+</head>
+<body>
+    <div id="initial"></div>
+    <div id="myDiv" style="width: 800px; height: 600px;"><!-- Plotly chart will be drawn inside this DIV --></div>
+    <div>
+        <table id="model" style="width: 50%; text-align: center">
+            <tr>
+                <th>t_i</th>
+                <th>delta_n_i</th>
+                <th>k * t_i</th>
+                <th>exp ^ (-k * t_i)</th>
+                <th>delta_n_i * exp ^ (k * t_i)</th>
+                <th>(exp ^ (k * t_i)) ^ 2</th>
+                <th>delta_n_i * t_i * exp ^ (k * t_i)</th>
+            </tr>
+        </table>
+    </div>
+    <div id="KN"></div>
+    <div>
+        <table id="model_kn" style="width: 50%; text-align: center">
+            <tr>
+                <th>t_i</th>
+                <th>delta_n_i</th>
+                <th>Расчетные значения</th>
+                <th>Невязки</th>
+                <th>Квадраты невязок</th>
+            </tr>
+        </table>
+    </div>
+    <div id="model_counted" style="width: 800px; height: 600px;"></div>
+    <div id="model_detailed" style="width: 800px; height: 600px;"></div>
+    <div id="mistakes"></div>
+    <div>
+        <table id="model_mistakes" style="width: 50%; text-align: center">
+            <th>t_i</th>
+            <th>Расчетные значения</th>
+            <th>k * ti</th>
+            <th>exp^()-k*t_i</th>
+        </table>
+    </div>
+    <div id="model_big" style="width: 800px; height: 600px;"></div>
+    <div id="ab"></div>
+    <div>
+        <table id="approximation" style="width: 50%; text-align: center">
+            <th>t_i</th>
+            <th>delta_n_i</th>
+            <th>Расчетные значения</th>
+            <th>Невязки n_i</th>
+            <th>Квадраты невязок</th>
+        </table>
+    </div>
+    <div id="approximation_plot" style="width: 800px; height: 600px;"></div>
+    <div id="approximation_plot_detailed" style="width: 800px; height: 600px;"></div>
+    <div>
+        <table id="interpolation_table" style="width: 50%; text-align: center">
+            <th>t_i</th>
+            <th>Расчетные значения delta_n_i</th>
+        </table>
+    </div>
+    <div id="interpolation_plot" style="width: 800px; height: 600px;"></div>
+</body>
+<script src="plotly.js"></script>
+<script src="script.js"></script>
+</html>
