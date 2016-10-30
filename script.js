@@ -1,4 +1,5 @@
 var days = [4, 5, 2, 2, 2, 1, 0];
+//var days = [4, 3, 2, 1, 0, 1, 1];
 var errors = [];
 
 (function () {
@@ -392,16 +393,14 @@ function interpolation() {
         }
     };
 
-    var table = document.createElement('interpolation_table');
+    var table = document.getElementById('interpolation_table');
     for (var i = 0; i < errors.length + 1; i++) {
         var tr = document.createElement('tr');
-
-
 
         var res = a + b * i;
         console.log('t: ' + i + ' res: ' + (res));
         tr.appendChild(td(i));
-        tr.appendChild(td(res));
+        tr.appendChild(td(res.toFixed(4)));
         table.appendChild(tr);
 
         interpolationValues.x.push(i);
