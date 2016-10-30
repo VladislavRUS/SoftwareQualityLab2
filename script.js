@@ -1,5 +1,6 @@
 var days = [4, 5, 2, 2, 2, 1, 0];
 //var days = [4, 3, 2, 1, 0, 1, 1];
+
 var errors = [];
 
 (function () {
@@ -23,7 +24,8 @@ var trace = {
 
 var layout = {
     xaxis: { title: 'Дни'},
-    yaxis: { title: 'Количество обнаруженных ошибок'}
+    yaxis: { title: 'Количество обнаруженных ошибок'},
+    title: 'Исходные данные'
 };
 
 for (var i = 0; i < errors.length; i++) {
@@ -33,7 +35,10 @@ for (var i = 0; i < errors.length; i++) {
 
 Plotly.newPlot('myDiv', [trace],  layout);
 
-append('initial', 'Исходные данные: ' + JSON.stringify(errors));
+append('initial', 'Исходные данные: <br>');
+errors.forEach(function(item) {
+    append('initial', item.cnt + ' ' + item.errorsNumber + '<br>');
+});
 
 var K = Math.random() * (0.7 - 0.3) + 0.3,
     N;

@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Software quality lab 2</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.js"></script>
+
 </head>
 <body>
     <div id="initial"></div>
@@ -10,13 +13,13 @@
     <div>
         <table id="model" style="width: 50%; text-align: center">
             <tr>
-                <th>t_i</th>
-                <th>delta_n_i</th>
-                <th>k * t_i</th>
-                <th>exp ^ (-k * t_i)</th>
-                <th>delta_n_i * exp ^ (k * t_i)</th>
-                <th>(exp ^ (k * t_i)) ^ 2</th>
-                <th>delta_n_i * t_i * exp ^ (k * t_i)</th>
+                <th id="1">t_i</th>
+                <th id="2">delta_n_i</th>
+                <th id="3">k * t_i</th>
+                <th id="4">exp ^ (-k * t_i)</th>
+                <th id="5">delta_n_i * exp ^ (k * t_i)</th>
+                <th id="6">(exp ^ (k * t_i)) ^ 2</th>
+                <th id="7">delta_n_i * t_i * exp ^ (k * t_i)</th>
             </tr>
         </table>
     </div>
@@ -24,11 +27,11 @@
     <div>
         <table id="model_kn" style="width: 50%; text-align: center">
             <tr>
-                <th>t_i</th>
-                <th>delta_n_i</th>
-                <th>Расчетные значения</th>
-                <th>Невязки</th>
-                <th>Квадраты невязок</th>
+                <th id="8">t_i</th>
+                <th id="9">delta_n_i</th>
+                <th id="10">Расчетные значения</th>
+                <th id="11">Невязки</th>
+                <th id="12">Квадраты невязок</th>
             </tr>
         </table>
     </div>
@@ -37,29 +40,29 @@
     <div id="mistakes"></div>
     <div>
         <table id="model_mistakes" style="width: 50%; text-align: center">
-            <th>t_i</th>
-            <th>Расчетные значения</th>
-            <th>k * ti</th>
-            <th>exp^()-k*t_i</th>
+            <th id="13">t_i</th>
+            <th id="14">Расчетные значения</th>
+            <th id="15">k * ti</th>
+            <th id="16">exp^()-k*t_i</th>
         </table>
     </div>
     <div id="model_big" style="width: 800px; height: 600px;"></div>
     <div id="ab"></div>
     <div>
         <table id="approximation" style="width: 50%; text-align: center">
-            <th>t_i</th>
-            <th>delta_n_i</th>
-            <th>Расчетные значения</th>
-            <th>Невязки n_i</th>
-            <th>Квадраты невязок</th>
+            <th id="17">t_i</th>
+            <th id="18">delta_n_i</th>
+            <th id="19">Расчетные значения</th>
+            <th >Невязки <span id="20"></span></th>
+            <th id="21">Квадраты невязок</th>
         </table>
     </div>
     <div id="approximation_plot" style="width: 800px; height: 600px;"></div>
     <div id="approximation_plot_detailed" style="width: 800px; height: 600px;"></div>
     <div>
         <table id="interpolation_table" style="width: 50%; text-align: center">
-            <th>t_i</th>
-            <th>Расчетные значения delta_n_i</th>
+            <th id="22">t_i</th>
+            <th>Расчетные значения <span id="23"></span></th>
         </table>
     </div>
     <div id="interpolation_plot" style="width: 800px; height: 600px;"></div>
@@ -67,4 +70,36 @@
 </body>
 <script src="plotly.js"></script>
 <script src="script.js"></script>
+<script>
+
+    function render(what, where) {
+        katex.render(what, document.getElementById(where));
+    }
+
+    render('t_i', 1);
+    render('\\Delta n_i', 2);
+    render('k * t_i', 3);
+    render('e^{-k * t_i}', 4);
+    render('\\Delta n_i * e^{-k * t_i}', 5);
+    render('{e^{-k * t_i}}^2', 6);
+    render('\\Delta n_i * t_i * e^{-k * t_i}', 7);
+
+    render('t_i', 8);
+    render('\\Delta n_i', 9);
+
+    render('t_i', 13);
+    render('k * t_i', 15);
+    render('e^{-k * t_i}', 16);
+
+    render('t_i', 17);
+    render('\\Delta n_i', 18);
+    render('\\Delta n_i', 20);
+
+    render('t_i', 22);
+    render('\\Delta n_i', 23);
+
+
+
+
+</script>
 </html>
